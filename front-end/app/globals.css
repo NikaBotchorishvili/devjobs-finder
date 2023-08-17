@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .desktopHeader{
+        background-image: url("/desktop/bg-pattern-header.svg");
+    }
+    .mobileHeader{
+        background-image: url("/mobile/bg-pattern-header.svg");
+    }
+
+    .btn-primary{
+        @apply active:bg-lightViolet text-white ml-5 rounded-md bg-violet p-3 font-bold ;
+    }
+}
