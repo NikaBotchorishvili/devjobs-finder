@@ -1,5 +1,4 @@
-import { CorsOptions } from "cors";
-const corsOptions: CorsOptions = {
+const corsOptions = {
 	origin: [
 		"http://localhost:3000",
 		"127.0.0.1:3000/",

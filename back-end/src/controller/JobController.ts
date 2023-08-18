@@ -21,7 +21,7 @@ export async function postJob(req: Request, res: Response) {
 		description,
 		logoBackground,
 	} = req.body;
-	const logo = req.files["logo"] as UploadedFile;
+	const logo = req.files?.logo as unknown as UploadedFile;
 
 	if (logo) {
 		Job.create({
@@ -42,6 +42,7 @@ export async function postJob(req: Request, res: Response) {
 			"images/",
 			randomFileName
 		);
+		
 		logo.mv(rootPath, (err) => {
 			if (err) return res.status(500).json({ error: err });
 		});

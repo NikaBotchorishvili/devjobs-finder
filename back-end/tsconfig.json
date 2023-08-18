@@ -2,27 +2,22 @@
   "ts-node": {
     "files": true
   },
-  "compilerOptions": {
-    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
-    "target": "ESNext",
-    "declaration": true /* Generates corresponding '.d.ts' file. */,
-    "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
-    "sourceMap": true /* Generates corresponding '.map' file. */,
-    "outDir": "./dist/" /* Redirect output structure to the directory. */,
-    "rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
-    "removeComments": true /* Do not emit comments to output. */,
-    "noEmit": true /* Do not emit outputs. */,
-    "noUnusedLocals": true /* Report errors on unused locals. */,
-    "noUnusedParameters": true /* Report errors on unused parameters. */,
-    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
-    "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-    "typeRoots": ["./src/typeDefs", "./node_modules/@types"],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowImportingTsExtensions":true,
-  },
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "CommonJS",
+      "outDir": "./dist",          // Output directory for compiled JavaScript files
+      "rootDir": "./src",          // Source directory for TypeScript files
+      "strict": true,              // Enable strict type checking
+      "esModuleInterop": true,     // Enable default import behavior for CommonJS modules
+      "resolveJsonModule": true,   // Allow importing JSON files as modules
+      "forceConsistentCasingInFileNames": true,  // Enforce consistent file casing
+      "skipLibCheck": true,        // Skip type checking of declaration files
+      "declaration": true,        // Generate declaration (.d.ts) files
+      "sourceMap": true           // Generate source map files for debugging
+    },
+  "include": [
+    "src//*.ts"               // Include TypeScript files within the src directory
+  ],
   "exclude": [
     "./node_modules/**/*",
     "./tests/**/*",

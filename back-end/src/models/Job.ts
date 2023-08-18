@@ -1,4 +1,4 @@
-import { Schema, model, mongo } from "mongoose";
+import { Schema, model } from "mongoose";
 
 type Requirements = {
 	content: string;

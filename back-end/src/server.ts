@@ -16,6 +16,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/images", express.static(path.resolve(__dirname, "../", "public", "images")))
+
 mongoose.connection.once("open", () => {
 	app.listen(PORT, () => {
 		console.log(`listening on PORT:${PORT}`);
