@@ -1,7 +1,9 @@
 "use client";
+
 import Item from "./Item";
 import data from "../../../../public/data.json";
-function List() {
+
+function List({jobs}) {
 	const content = data.map((company) => {
 		return (
 			<Item
