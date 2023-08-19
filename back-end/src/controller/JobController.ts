@@ -24,6 +24,7 @@ export async function postJob(req: Request, res: Response) {
 	const logo = req.files?.logo as unknown as UploadedFile;
 
 	if (logo) {
+		let randomFileName = GenerateRandomFileName(logo.name);
 		Job.create({
 			company,
 			position,
@@ -33,9 +34,8 @@ export async function postJob(req: Request, res: Response) {
 			apply,
 			description,
 			logoBackground,
-			logo: logo.name,
+			logo: randomFileName,
 		});
-		let randomFileName = GenerateRandomFileName(logo.name);
 		const rootPath = path.resolve(
 			path.dirname(__dirname),
 			"../public",
