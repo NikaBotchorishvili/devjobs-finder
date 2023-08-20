@@ -38,11 +38,11 @@ const job = new Schema<Job>({
 	website: { type: String, required: true },
 	apply: { type: String, required: true },
 	description: { type: String, required: true },
-	requirements: { type: requirements },
-	role: { type: Role },
 	postedAt: { type: Date, default: Date.now },
 	logo: { type: String, required: true },
 	logoBackground: { type: String, required: true },
+	requirements: { type: requirements },
+	role: { type: Role },
 });
 
 const Job = model("Job", job);

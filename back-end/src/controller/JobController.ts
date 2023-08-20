@@ -20,9 +20,14 @@ export async function postJob(req: Request, res: Response) {
 		apply,
 		description,
 		logoBackground,
+		requirements_content,
+		requirements_items,
+		role_content,
+		role_items
 	} = req.body;
 	const logo = req.files?.logo as unknown as UploadedFile;
-
+	console.log(role_items);
+	console.log(requirements_items)
 	if (logo) {
 		let randomFileName = GenerateRandomFileName(logo.name);
 		Job.create({
@@ -35,6 +40,14 @@ export async function postJob(req: Request, res: Response) {
 			description,
 			logoBackground,
 			logo: randomFileName,
+			requirements: {
+				content: requirements_content,
+				items: requirements_items
+			},
+			role: {
+				content: role_content,
+				items: role_items
+			}
 		});
 		const rootPath = path.resolve(
 			path.dirname(__dirname),
