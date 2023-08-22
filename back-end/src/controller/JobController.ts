@@ -63,3 +63,14 @@ export async function postJob(req: Request, res: Response) {
 		return res.sendStatus(201);
 	}
 }
+
+export async function getJob(req: Request, res: Response){
+	const {id} = req.params;
+
+	const data = await Job.findById(id).exec();
+	console.log(data);
+
+	return res.status(200).json(data);
+
+
+}

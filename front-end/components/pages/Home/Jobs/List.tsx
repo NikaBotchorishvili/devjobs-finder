@@ -1,20 +1,19 @@
 "use client";
 
 import Item from "./Item";
-import data from "../../../../public/data.json";
-
-function List({jobs}) {
-	const content = data.map((company) => {
+import { Job } from "@/types";
+function List({jobs}: {jobs: Job[]}) {
+	const content = jobs.map((job) => {
 		return (
 			<Item
-				key={company.id}
-				company={company.company}
-				logo={company.logo}
-				logoBackground={company.logoBackground}
-                location={company.location}
-                position={company.position}
-				postedAt={company.postedAt}
-				contract={company.contract}
+				key={job._id}
+				company={job.company}
+				logo={job.logo}
+				logoBackground={job.logoBackground}
+                location={job.location}
+                position={job.position}
+				postedAt={job.postedAt}
+				contract={job.contract}
 			/>
 		);
 	});

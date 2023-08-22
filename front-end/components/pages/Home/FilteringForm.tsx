@@ -7,7 +7,6 @@ import {
 	faLocationPin,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-Top
 export default function Home() {
 	// const [formData, setFormData] = useState();
 	return (

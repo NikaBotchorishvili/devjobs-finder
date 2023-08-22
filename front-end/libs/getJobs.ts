@@ -1,5 +1,5 @@
 async function getJobs() {
-    const res = await fetch("https://devjobs-finder-production.up.railway.app/jobs");
+    const res = await fetch("https://devjobs-finder-production.up.railway.app/jobs/", {cache: "no-cache"});
     const data = await res.json();
     return await data;
 }

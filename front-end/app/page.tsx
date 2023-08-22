@@ -4,7 +4,6 @@ import getJobs from "@/libs/getJobs";
 
 export default async function Home() {
 	const jobs = await getJobs();
-	console.log(jobs);
 	return (
 		<>
 			<FilteringForm />
