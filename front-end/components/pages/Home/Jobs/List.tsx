@@ -7,6 +7,7 @@ function List({jobs}: {jobs: Job[]}) {
 		return (
 			<Item
 				key={job._id}
+				id={job._id}
 				company={job.company}
 				logo={job.logo}
 				logoBackground={job.logoBackground}

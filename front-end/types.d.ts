@@ -10,4 +10,12 @@ export type Job = {
     logoBackground: string;
     postedAt: string;
     location: string;
+    requirements: {
+        content: string,
+        items: string[]
+    },
+    role: {
+        content: string,
+        items: string[],
+    }
 }

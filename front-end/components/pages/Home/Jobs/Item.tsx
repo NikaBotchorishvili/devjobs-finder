@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 type ItemProps = {
+	id: string;
 	company: string;
 	logo: string;
 	logoBackground: string;
@@ -9,7 +10,9 @@ type ItemProps = {
 	postedAt: string;
 	contract: string;
 };
+	
 function Item({
+	id,
 	company,
 	logo,
 	logoBackground,
@@ -19,7 +22,7 @@ function Item({
 	postedAt,
 }: ItemProps) {
 	return (
-		<Link href={`/${company}`} className=" shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] dark:bg-veryDarkBlue rounded-xl dark:shadow-none flex flex-col h-[150px] w-[80%] sm:w-[30%] md:w-25% lg:w-[21%] justify-between p-12  box-content relative">
+		<Link href={`/${id}`} className=" shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] dark:bg-veryDarkBlue rounded-xl dark:shadow-none flex flex-col h-[150px] w-[80%] sm:w-[30%] md:w-25% lg:w-[21%] justify-between p-12  box-content relative">
 			<img
 				src={`https://devjobs-finder-production.up.railway.app/images/` + logo}
 				className={` absolute top-0 -translate-y-1/2 p-3 box-content rounded-lg`}
@@ -27,15 +30,15 @@ function Item({
 				alt="logo"
 			/>
 			<div className="flex flex-col gap-y-2">
-				<p className="text-darkGrey flex gap-x-2 items-center">
+				<p className="flex items-center text-darkGrey gap-x-2">
 					<span>{postedAt}</span>
 					<span className="font-bold">.</span>
 					<span>{contract}</span>
 				</p>
-				<h1 className="font-bold text-xl">{position}</h1>
-				<small className="text-darkGrey text-lg">{company}</small>
+				<h1 className="text-xl font-bold">{position}</h1>
+				<small className="text-lg text-darkGrey">{company}</small>
 			</div>
-			<h4 className="text-violet font-bold">{location}</h4>
+			<h4 className="font-bold text-violet">{location}</h4>
 		</Link>
 	);
 }
