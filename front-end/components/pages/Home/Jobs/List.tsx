@@ -20,7 +20,7 @@ function List({jobs}: {jobs: Job[]}) {
 	});
 
 	return (
-		<section className="grid w-[90%] justify-center grid-cols-[repeat(auto-fill,350px)] mx-auto  md:justify-between gap-y-10 gap-x-5 mt-10">
+		<section className="flex flex-wrap w-[80%]  mx-auto mr-auto md:justify-between gap-y-10 gap-x-5 mt-10">
             {content}
         </section>
 	);

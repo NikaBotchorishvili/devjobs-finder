@@ -5,9 +5,14 @@ import getJobs from "@/libs/getJobs";
 export default async function Home({
 	searchParams,
 }: {
-	searchParams: { [key: string]: string };
+	searchParams: { company: string; location: string; fullTime: "string" };
 }) {
-	const jobs = await getJobs({...searchParams});
+	const {company, location, fullTime} = searchParams;
+	const jobs = await getJobs({
+		company: company,
+		location: location,
+		fullTime: fullTime,
+	});
 	return (
 		<>
 			<FilteringForm />

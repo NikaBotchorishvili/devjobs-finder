@@ -2,12 +2,17 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useRef, MouseEvent, useState } from "react";
+import { useRef, MouseEvent, useEffect } from "react";
 
 function ThemeSwitcher() {
 	const { theme, setTheme } = useTheme();
 	const checkboxRef = useRef<HTMLInputElement | null>(null);
 
+	useEffect(() => {
+		if (checkboxRef && checkboxRef.current && theme) {
+			checkboxRef.current.checked = theme == "dark" ? true : false;
+		}
+	}, []);
 	const variants = {
 		initial: {
 			left: theme == "dark" ? 32 : 5,
@@ -25,7 +30,7 @@ function ThemeSwitcher() {
 	return (
 		<div className="flex gap-x-2">
 			<Image
-			className="select-none"
+				className="select-none"
 				src="desktop/icon-sun.svg"
 				width={25}
 				height={20}
@@ -37,7 +42,6 @@ function ThemeSwitcher() {
 					type="checkbox"
 					className="w-full h-full opacity-0 peer "
 					onClick={handleClick}
-
 				/>
 				<motion.span
 					key="toggler"
@@ -45,7 +49,7 @@ function ThemeSwitcher() {
 					variants={variants}
 					initial="initial"
 					animate="animate"
-					className="h-[12.5px] peer-active:bg-lightViolet w-[12.5px] rounded-full bg-violet absolute top-1/2 -translate-y-1/2 pointer-events-none "
+					className={`h-[12.5px] peer-active:bg-lightViolet w-[12.5px] rounded-full bg-violet absolute top-1/2 -translate-y-1/2 pointer-events-none `}
 				></motion.span>
 			</div>
 			<Image

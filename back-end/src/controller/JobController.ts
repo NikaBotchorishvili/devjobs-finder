@@ -74,9 +74,9 @@ export async function getJobs(req: Request, res: Response) {
 		const companyName = req.query.company || "";
 
 		const filteredJobs = await Job.find({
+			contract: { $regex: fullTime, $options: "i" },
 			company: { $regex: companyName, $options: "i" },
 			location: { $regex: location, $options: "i" },
-			contract: { $regex: fullTime, $options: "i" },
 		}).exec();
 
 		return res.status(200).json(filteredJobs)
