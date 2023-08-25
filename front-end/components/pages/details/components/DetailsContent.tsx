@@ -13,20 +13,30 @@ function DetailsContent({
 		| "description"
 	>;
 }) {
-	const reqItemsContent: React.ReactNode = job.requirements?.items.map((item) => {
-		return (
-			<li className="before:content-[''] w-full h-full before:w-[5px] before:h-[5px] before:rounded-full before:bg-violet before:inline-block before:mr-5">
-				{item}
-			</li>
-		);
-	});
-	const roleItemsContent: React.ReactNode = job.role?.items.map((item) => {
-		return (
-			<li className="before:content-[''] w-full h-full before:w-[5px] before:h-[5px] before:rounded-full before:bg-violet before:inline-block before:mr-5">
-				{item}
-			</li>
-		);
-	});
+	const reqItemsContent: React.ReactNode = job.requirements?.items.map(
+		(item, id) => {
+			return (
+				<li
+					key={id}
+					className="before:content-[''] w-full h-full before:w-[5px] before:h-[5px] before:rounded-full before:bg-violet before:inline-block before:mr-5"
+				>
+					{item}
+				</li>
+			);
+		}
+	);
+	const roleItemsContent: React.ReactNode = job.role?.items.map(
+		(item, id) => {
+			return (
+				<li
+					key={id}
+					className="before:content-[''] w-full h-full before:w-[5px] before:h-[5px] before:rounded-full before:bg-violet before:inline-block before:mr-5"
+				>
+					{item}
+				</li>
+			);
+		}
+	);
 	return (
 		<>
 			<section className="fixed bottom-0 w-full bg-white dark:bg-veryDarkBlue h-[100px]">
@@ -82,7 +92,7 @@ function DetailsContent({
 						<p>{job.role?.content}</p>
 
 						<ul className="flex flex-col gap-y-5 ">
-							{ roleItemsContent }
+							{roleItemsContent}
 						</ul>
 					</article>
 				</section>

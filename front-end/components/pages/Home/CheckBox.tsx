@@ -12,7 +12,7 @@ function CheckBox({ className }: CheckBoxProps) {
 				<input
 					type="checkbox"
 					className="p-3 dark:border-none absolute w-full h-full bg-opacity-20 rounded-md bg-veryDarkBlue checked:bg-violet dark:hover:bg-opacity-80 dark:bg-midnight peer appearance-none select-none cursor-pointer"
-					name="fulltime"
+					name="fullTime"
 					id=""
 				/>
 				<Image

@@ -20,7 +20,8 @@ export default function Home() {
 						<input
 							className="h-full dark:bg-veryDarkBlue border-none sm:px-10 md:pl-12 lg:pl-12 sm:w-[200px] lg:w-[330px] text-ellipsis text-sm focus:outline-none"
 							type="text"
-							placeholder="Filter by title, companies, expertise…"
+							name="company"
+							placeholder="Filter by company"
 						/>
 					</div>
 					<div className="h-full relative ">
@@ -32,6 +33,7 @@ export default function Home() {
 							className="h-full dark:bg-veryDarkBlue border-none hidden sm:block pl-10 mr-4 md:pl-12 md:mr-6 lg:pl-12 lg:mr-8 sm:w-[200px] lg:w-[330px] text-ellipsis text-sm focus:outline-none "
 							placeholder="Filter by location…"
 							type="text"
+							name="location"
 						/>
 					</div>
 					<CheckBox className="lg:inline hidden"/>

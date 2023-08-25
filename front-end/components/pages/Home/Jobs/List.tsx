@@ -20,7 +20,7 @@ function List({jobs}: {jobs: Job[]}) {
 	});
 
 	return (
-		<section className="flex w-[90%] mx-auto flex-row justify-between flex-wrap grid-cols-[1fr,1fr,1fr] gap-y-10 gap-x-5 mt-10">
+		<section className="grid w-[90%] justify-center grid-cols-[repeat(auto-fill,350px)] mx-auto  md:justify-between gap-y-10 gap-x-5 mt-10">
             {content}
         </section>
 	);
