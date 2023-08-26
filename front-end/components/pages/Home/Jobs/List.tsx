@@ -1,6 +1,6 @@
-"use client";
-
+import moment from "moment";
 import Item from "./Item";
+
 import { Job } from "@/types";
 function List({jobs}: {jobs: Job[]}) {
 	const content = jobs.map((job) => {
@@ -13,7 +13,7 @@ function List({jobs}: {jobs: Job[]}) {
 				logoBackground={job.logoBackground}
                 location={job.location}
                 position={job.position}
-				postedAt={job.postedAt}
+				postedAt={moment(job.postedAt).fromNow()}
 				contract={job.contract}
 			/>
 		);

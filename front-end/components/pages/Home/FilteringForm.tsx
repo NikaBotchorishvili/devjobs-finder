@@ -3,6 +3,7 @@ import CheckBox from "@/components/pages/Home/CheckBox";
 import Dialog from "@/components/pages/Home/Dialog";
 import { faSearch, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Home() {
 	return (
 		<Top>
@@ -19,7 +20,7 @@ export default function Home() {
 						placeholder="Filter by company"
 					/>
 				</div>
-				<div className="h-full relative ">
+				<div className="h-full relative">
 					<FontAwesomeIcon
 						className="sm:block text-violet h-[20px] hidden absolute top-1/2 -translate-y-1/2 left-3 select-none"
 						icon={faLocationPin}
@@ -31,8 +32,8 @@ export default function Home() {
 						name="location"
 					/>
 				</div>
-				<CheckBox className="lg:inline hidden" />
-				<Dialog />
+				<Dialog  />
+				<CheckBox className="lg:flex hidden" />
 				<button className="btn-primary sm:px-2 md:px-2 lg:px-5  ">
 					<span className="hidden sm:block">Search</span>
 					<FontAwesomeIcon

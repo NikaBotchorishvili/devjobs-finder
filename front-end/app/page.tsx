@@ -1,7 +1,7 @@
-import FilteringForm from "@/components/pages/Home/FilteringForm";
 import List from "@/components/pages/Home/Jobs/List";
 import getJobs from "@/libs/getJobs";
-
+import dynamic from 'next/dynamic'
+const FilteringForm = dynamic(() => import('@/components/pages/Home/FilteringForm'), { ssr: false })
 export default async function Home({
 	searchParams,
 }: {

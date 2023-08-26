@@ -52,25 +52,28 @@ function Dialog() {
 			/>
 			<dialog
 				ref={dialogRef}
-				className="dark:bg-veryDarkBlue w-[300px] rounded-lg sm:hidden p-5 backdrop:bg-midnight backdrop:bg-opacity-40 "
+				className="dark:bg-veryDarkBlue w-[300px] rounded-lg p-5 backdrop:bg-midnight backdrop:bg-opacity-40 "
 			>
-				<div className="flex flex-col gap-y-8">
-					<div className="relative">
-						<FontAwesomeIcon
-							className="sm:block text-violet h-[20px] select-none absolute top-1/2 -translate-y-1/2 left-0"
-							icon={faLocationPin}
-						/>
-						<input
-							className=" dark:bg-veryDarkBlue  py-3 px-6 text-ellipsis text-sm focus:outline-none border-b border-b-darkGrey"
-							placeholder="Filter by location…"
-							type="text"
-						/>
+				<form method="GET" >
+					<div className="flex flex-col gap-y-8">
+						<div className="relative">
+							<FontAwesomeIcon
+								className="sm:block text-violet h-[20px] select-none absolute top-1/2 -translate-y-1/2 left-0"
+								icon={faLocationPin}
+							/>
+							<input
+								className=" dark:bg-veryDarkBlue  py-3 px-6 text-ellipsis text-sm focus:outline-none border-b border-b-darkGrey sm:hidden flex"
+								placeholder="Filter by location…"
+								type="text"
+								name="location"
+							/>
+						</div>
+						<CheckBox className="inline"/>
+						<button className="active:bg-lightViolet text-white  bg-violet py-3 rounded-md">
+							<span className="">Search</span>
+						</button>
 					</div>
-                    <CheckBox className="inline"/>
-					<button className="active:bg-lightViolet text-white  bg-violet py-3 rounded-md">
-						<span className="">Search</span>
-					</button>
-				</div>
+				</form>
 			</dialog>
 		</>
 	);

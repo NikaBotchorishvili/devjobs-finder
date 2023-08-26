@@ -1,13 +1,11 @@
 import Image from "next/image";
-
-
 type CheckBoxProps = {
 	className: string;
 };
 
 function CheckBox({ className }: CheckBoxProps) {
 	return (
-		<div className="flex items-center gap-x-2 ">
+		<div className={`flex items-center gap-x-2 ${className}`}>
 			<div className="flex items-center justify-center relative w-[25px] h-[25px]">
 				<input
 					type="checkbox"
@@ -23,8 +21,8 @@ function CheckBox({ className }: CheckBoxProps) {
 					alt="checkbox icon"
 				/>
 			</div>
-			<label htmlFor="fulltime">
-				Full Time <span className={`${className}`}>Only</span>
+			<label htmlFor="fulltime" className="block">
+				Full Time <span className="inline">Only</span>
 			</label>
 		</div>
 	);
