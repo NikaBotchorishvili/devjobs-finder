@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://www.frontendmentor.io/solutions/fullstack-devjobs-webapp-built-with-nextjs-134-and-tailwindcss-sgGbTUBApv)
-- Live Site URL: [Live](https://devjobs-finder.vercel.app/64e23b669252f156504c21c0)
+- Live Site URL: [Live](https://devjobs-finder.vercel.app)
 
 ### Built with
 
